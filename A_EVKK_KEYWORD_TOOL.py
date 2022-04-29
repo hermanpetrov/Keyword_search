@@ -82,6 +82,7 @@ def corpusProcessor(corpusFile, corpusType, menuInputType):
             batchWriter(
                 (lineCount // csvBatchSize) + 1, corpusLines, corpusFile, corpusType
             )
+    print(splitter)
     lemmaExtractor(corpusFile, batchCount, corpusType, menuInputType)
     print("\n", corpusFile, " korpus on loodud.\n")
 
@@ -122,7 +123,7 @@ def lemmaExtractor(corpusName, batchCount, corpusType, menuInputType):
     lemmaDictionary = dict()
     counter = 1
     tokenCount = 0
-    print("Korpus  (", corpusName, ") lemmatiseeritakse.")
+    print("Korpus  (", corpusName, ") lemmatiseeritakse.\n")
     while batchCount >= counter:
         lemmaOutput = outputPath[0] + "/lemmas(" + corpusName + ").csv"
         nonLemmasOutput = outputPath[1] + "/nonLemmas(" + corpusName + ").csv"
@@ -451,9 +452,7 @@ def keynessMath(
     focAll = focusAllFrequencies
     refAll = referenceAllFrequencies
 
-    print(splitter)
-    print("\nSõnede arv fookuskorpuses: ", focAll)
-    print("Sõnede arv referentskorpuses: ", refAll)
+ 
     print(splitter)
     for ind in tqdm.tqdm(corpusData.index):
 
@@ -920,6 +919,7 @@ def b_5_keywordSettings(settings):
 def menu_keywordSearch():
     settings = loadSettings()
     menu_c_input = 0
+    resetLog()
     while menu_c_input != "2":
         print(
             "VÕTMESÕNADE OTSING"
@@ -937,11 +937,11 @@ def menu_keywordSearch():
             print("Võtmesuse arvutamine on alanud, palun oodake.")
             print("Arvutatakse võtmesust lemmadega.")
             calculationProcessor("lemma")
-            print("\n Arvutatakse võtmesust sõnavormidega.")
+            print("\nArvutatakse võtmesust sõnavormidega.")
             calculationProcessor("nonLemma")
             print(
-                "\nVõtmesõnad failid on loodud!\nVaadake kausta "
-                '"keynessValue"'
+                "\nVõtmesus failid on loodud!\nVaadake kausta "
+                '"keynessValues"'
                 ".\n"
             )
             input(" Jätkamiseks vajutage klahvi ENTER.\n")
