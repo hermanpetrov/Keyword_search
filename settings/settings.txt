@@ -1,10 +1,22 @@
 ühendkorpus2021
-fookuskorpus_K1.txt_1
+fookuskorpus_riigieksam.txt_1
 1
 1
-kõik
+200
 sees
 sees
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

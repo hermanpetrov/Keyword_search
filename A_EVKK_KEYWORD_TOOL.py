@@ -143,7 +143,6 @@ def lemmaExtractor(corpusName, batchCount, corpusType, menuInputType):
             "r",
             encoding="utf-8",
         ) as corpusPart:
-            logging.info("Data/data(" + corpusName + ")" + str(counter) + ".csv")
             counter += 1
             inputText = corpusPart.read().rstrip()
             doc = nlp(inputText)
@@ -799,14 +798,14 @@ def b_1_keywordSettings(settings):
     resetLog()
     menu_b_1_input = 0
     addOne_N = settings[2]
-    addOneOptions = [1, 10, 1000, 10000]
+    addOneOptions = [1, 10, 100, 1000]
     while menu_b_1_input != "5":
         print(
             "SIMPLE MATH n KONSTANT"
             + splitter
             + info
             + splitter
-            + "\n1. 1\n2. 100\n3. 1000\n4. 10000\n5. Tagasi"
+            + "\n1. 1\n2. 10\n3. 100\n4. 1000\n5. Tagasi"
         )
         menu_b_1_input = input()
         if (menu_b_1_input != "") & (menu_b_1_input.isnumeric()):
@@ -855,14 +854,14 @@ def b_3_keywordSettings(settings):
     resetLog()
     menu_b_3_input = 0
     maxWordRows = settings[4]
-    maxWordsDisplayedOption = [20, 50, 100, "kõik"]
+    maxWordsDisplayedOption = [50, 100, 200, "kõik"]
     while menu_b_3_input != "5":
         print(
             "MAKSIMAALNE NÄIDATUD SÕNADE HULK"
             + splitter
             + info
             + splitter
-            + "\n1. 20\n2. 50\n3. 100\n4. Kõik\n5. Tagasi"
+            + "\n1. 50\n2. 100\n3. 200\n4. Kõik\n5. Tagasi"
         )
         menu_b_3_input = input()
         if (menu_b_3_input != "") & (menu_b_3_input.isnumeric()):
