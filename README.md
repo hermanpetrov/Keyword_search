@@ -1,5 +1,5 @@
 # Keyword_search
-The keyword search tool is a project which was made for my bachelor thesis. They main objective was to create keyword tool using the gathered infromation about corpus linguistics and popular statistical methods used in softwares like Antconc, Wordsmith and Lancsbox. Additionally I checked also Sketch Engine as it is one of the biggest online text analysis tools to this date (2022). 
+The keyword search tool is a project which was made for my bachelor thesis. They main objective was to create a keyword tool using the gathered infromation about corpus linguistics and popular statistical methods used in softwares like Antconc, Wordsmith and Lancsbox. Additionally I checked also Sketch Engine as it is one of the biggest online text analysis tools to this date (2022). 
 
 Objective of this tool was to determine which of the 4 methods provides less duplicate keywords and which methods provide us with the most original ones.
 
