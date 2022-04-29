@@ -30,7 +30,7 @@ For scipy:
 ```
 pip install scipy
 ```
-For scipy: 
+For stanza: 
 ```
 pip install stanza
 ```
