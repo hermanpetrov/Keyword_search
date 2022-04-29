@@ -1,9 +1,30 @@
-import csv
-import numpy
+A_EVKK_KEYWORD_TOOL.py
+Kellel on juurdepääs
+
+J
+
+M
+Süsteemi atribuudid
+Tüüp
+Tekst
+Suurus
+31 kB
+Kasutatud salvestusruum
+31 kB
+Asukoht
+Herman_Petrov_võtmesõnad
+Omanik
+mina
+Muudeti
+Muutsin 18:53
+Avatud
+Avasin 18:56
+Loodi
+18:56 rakendusega Google Drive Web
+Lisa kirjeldus
+Vaatajad saavad alla laadida
 import glob
-from io import StringIO
 import math
-import numpy
 import os
 import pandas as pd
 from pathlib import Path
@@ -273,7 +294,6 @@ def calculationProcessor(wordType):
     stopWords = settings[6]
     if (referenceFolder != "") or (focusFolder != ""):
         columnType = ""
-        outputName = wordType
         if wordType == "lemma":
             columnType = "LEMMA"
             referenceCorpus = pd.read_csv(
@@ -292,14 +312,7 @@ def calculationProcessor(wordType):
                 + ").csv",
                 encoding="utf-8",
             )
-            tokeCount = pd.read_csv(
-                "focusCorpusWords/"
-                + focusFolder
-                + "/totalTokens/totalTokens("
-                + focusFolder
-                + ").csv",
-                encoding="utf-8",
-            )
+
         if wordType == "nonLemma":
             columnType = "SÕNAVORM"
             referenceCorpus = pd.read_csv(
@@ -386,7 +399,7 @@ def loadSettings():
         settingsAttributes = settings.read()
         listAttributes = settingsAttributes.split("\n")
     return listAttributes
-    settings.close()
+    
 
 
 def updateSettings(settingsAttributes):
@@ -559,7 +572,6 @@ def keynessMath(
         logKeynessResult,
         dataSetName,
         wordAmount,
-        focCorpusMinimumFreq,
         outputFolder,
     )
     keynessValue(
@@ -567,7 +579,6 @@ def keynessMath(
         chiKeynessResult,
         dataSetName,
         wordAmount,
-        focCorpusMinimumFreq,
         outputFolder,
     )
     keynessValue(
@@ -575,7 +586,6 @@ def keynessMath(
         simpleMathResult,
         dataSetName,
         wordAmount,
-        focCorpusMinimumFreq,
         outputFolder,
     )
     keynessValue(
@@ -583,13 +593,12 @@ def keynessMath(
         logRatioResult,
         dataSetName,
         wordAmount,
-        focCorpusMinimumFreq,
         outputFolder,
     )
 
 
 def keynessValue(
-    equationType, dataFrame, dataSetName, wordAmount, focCorpusMinimumFreq, outputFolder
+    equationType, dataFrame, dataSetName, wordAmount, outputFolder
 ):
     dataFrame = dataFrame.sort_values(by=["Võtmesus"], ascending=False)
     if wordAmount != "kõik":
