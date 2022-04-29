@@ -77,7 +77,6 @@ def corpusProcessor(corpusFile, corpusType, menuInputType):
                 )
                 batchCount += 1
                 corpusLines = []
-        # write remainder
         if len(corpusLines) > 0:
             batchCount += 1
             batchWriter(
