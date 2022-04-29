@@ -1,28 +1,3 @@
-A_EVKK_KEYWORD_TOOL.py
-Kellel on juurdepääs
-
-J
-
-M
-Süsteemi atribuudid
-Tüüp
-Tekst
-Suurus
-31 kB
-Kasutatud salvestusruum
-31 kB
-Asukoht
-Herman_Petrov_võtmesõnad
-Omanik
-mina
-Muudeti
-Muutsin 18:53
-Avatud
-Avasin 18:56
-Loodi
-18:56 rakendusega Google Drive Web
-Lisa kirjeldus
-Vaatajad saavad alla laadida
 import glob
 import math
 import os
