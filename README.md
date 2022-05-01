@@ -24,7 +24,8 @@ To use the tool it is necessary to  run the script in Python 3.8 and install the
 
 ## Quick guide
 
-The main navigation around the tool is done by inputting the row numbers.
+The main navigation around the tool is done by inputting the row numbers. 
+Example: if the user would like to selecte the first option on the menu, the user should type in 1 and press enter.
 
 ![MENU](https://user-images.githubusercontent.com/55134673/166155542-7dea63a6-a73a-42fe-88ca-5400d86bfa64.jpg)
 
