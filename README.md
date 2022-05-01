@@ -11,10 +11,10 @@ Estonian Keywords Search is a python interpreter tool which allows users to find
 The tool has included two focus corpa which are meant for the tool learning and testing purposes.
 
 The tool utilizes four different statistical methods for keyword calculation:
-Log-likelihood
-Chi-square
-Log-ratio
-Simple maths
+* Log-likelihood
+* Chi-square
+* Log-ratio
+* Simple maths
 
 
 To use the tool it is necessary to  run the script in Python 3.8 and install the following libraries:
