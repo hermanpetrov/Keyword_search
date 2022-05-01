@@ -6,7 +6,7 @@ KEYWORD SEARCH IN ESTONIAN TEXTS
 
 Tallinn University 2022
 
-Estonian Keywords Search is a python interpreter tool which allows users to find keywords from estonian texts. The tool has an included reference corpus [(Estonian National Corpus 2021)](https://doi.org/10.15155/3-00-0000-0000-0000-08D1FL) made by the Institute of the Estonian language and a lemmatizer  to lemmatize both user provided reference or focus corpa.
+Estonian Keywords Search is a python interpreter tool which allows users to find keywords from estonian texts. The tool has an included reference corpus [(Estonian National Corpus 2021)](https://doi.org/10.15155/3-00-0000-0000-0000-08D1FL) made by the Institute of the Estonian language and a lemmatizer  to lemmatize both user provided reference and focus corpa.
 
 The tool has included two focus corpa which are for learning and tool testing purposes.
 
