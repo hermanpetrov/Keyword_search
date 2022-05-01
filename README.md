@@ -6,7 +6,9 @@ KEYWORD SEARCH IN ESTONIAN TEXTS
 
 Tallinn University 2022
 
-Estonian Keywords Search is a python interpreter  tool which allows users to find keywords from estonian texts. The tool has an included reference corpus [(Estonian National Corpus 2021)](https://doi.org/10.15155/3-00-0000-0000-0000-08D1FL) made by the Institute of the Estonian language and a lemmatizer  to lemmatize both user provided reference or focus corpa.  
+Estonian Keywords Search is a python interpreter tool which allows users to find keywords from estonian texts. The tool has an included reference corpus [(Estonian National Corpus 2021)](https://doi.org/10.15155/3-00-0000-0000-0000-08D1FL) made by the Institute of the Estonian language and a lemmatizer  to lemmatize both user provided reference or focus corpa.
+
+The tool has included two focus corpa which are for learning and tool testing purposes.
 
 The tool utilizes four different statistical methods for keyword calculation:
 Log-likelihood
@@ -15,14 +17,14 @@ Log-ratio
 Simple maths
 
 
-To use the tool it is necessary to  runt the script in Python 3.8 and install the following libraries:
+To use the tool it is necessary to  run the script in Python 3.8 and install the following libraries:
   * Pandas (https://pandas.pydata.org) for data structuring.
   * Scipy (https://scipy.org) for computation.
   * Stanza (https://stanfordnlp.github.io/stanza/) for lemmatization.
 
 ## Quick guide
 
-The main navigation around the tool is happning through row number input without the punctuation.
+The main navigation around the tool is done by inputting the row numbers.
 
 ![MENU](https://user-images.githubusercontent.com/55134673/166155542-7dea63a6-a73a-42fe-88ca-5400d86bfa64.jpg)
 
@@ -30,10 +32,10 @@ The main navigation around the tool is happning through row number input without
 
 ![MENU_b](https://user-images.githubusercontent.com/55134673/166156066-4e68b084-d008-4574-96aa-79a48fdd2abb.jpg)
 
-In the corpus settings the user is provided with the opportunity to select a both focus and reference corpus. 
-The corpus creation depend from the purpose of the corpus.
+In the corpus settings the user is provided with the opportunity to select a both focus and reference corpa. 
+The corpus creation depends from the purpose of the corpus.
 
-Example: if the user decides to add another focus corpus then the provided corpus should be added to the focusCorpus folder before the corpus creation process. During the corpus creation the processed corpus is lemmatized and the words are extracted to the focusCorpusWords folder. After the corpus creation the user can manage their preffered focus corpus that will be used in the keyword calculations.
+Example: if the user decides to add another focus corpus then  before the corpus creation process, the provided corpus should be added to the focusCorpus folder. During the corpus creation the processed corpus is lemmatized and the words are extracted to the focusCorpusWords folder. After the corpus creation is complete the user can select their preffered focus corpus that will be used in the keyword calculations.
 
 
 ### Keyword search settings
