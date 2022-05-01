@@ -50,7 +50,7 @@ The keyword search is the main function of the Estonian Keyword Search tool.
 
 ![MENU_Y](https://user-images.githubusercontent.com/55134673/166156605-bcb25ae7-a6c2-4719-8f75-a3066317056f.jpg)
 
-Upon initation the tool will begin to calcualte the keyword scores both with lemmatized and non lemmatized words. After the calculation is complete the used focus corpus keyword folder is created in the keynessValue folder. The created folder will be named both after the compared focus and reference corpa. 
+Upon initation the tool will begin to calcualte the keyword scores both with lemmatized and non lemmatized words. After the calculation is complete the used focus corpus keyword folder is created in the keynessValue folder. The created folder will be named both after the compared focus and reference corpus. 
 
 ![Folder](https://user-images.githubusercontent.com/55134673/166156645-bf485d1f-ed7c-4869-83dc-c0a3f1625c8d.PNG)
 
