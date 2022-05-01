@@ -25,7 +25,7 @@ To use the tool it is necessary to  run the script in Python 3.8 and install the
 ## Quick guide
 
 The main navigation around the tool is done by inputting the row numbers. 
-Example: if the user would like to selecte the first option on the menu, the user should type in 1 and press enter.
+Example: if the user would like to select the first option on the menu, the user should type in 1 and press enter.
 
 ![MENU](https://user-images.githubusercontent.com/55134673/166155542-7dea63a6-a73a-42fe-88ca-5400d86bfa64.jpg)
 
@@ -33,17 +33,18 @@ Example: if the user would like to selecte the first option on the menu, the use
 
 ![MENU_b](https://user-images.githubusercontent.com/55134673/166156066-4e68b084-d008-4574-96aa-79a48fdd2abb.jpg)
 
-In the corpus settings the user is provided with the opportunity to select a both focus and reference corpa. 
-The corpus creation depends from the purpose of the corpus.
+In the corpus settings the user is provided with the opportunity to manage used focus and reference corpa. 
 
-Example: if the user decides to add another focus corpus then  before the corpus creation process, the provided corpus should be added to the focusCorpus folder. During the corpus creation the processed corpus is lemmatized and the words are extracted to the focusCorpusWords folder. After the corpus creation is complete the user can select their preffered focus corpus that will be used in the keyword calculations.
+The corpus creation options allows for the user to create a new corpus wordlist. The creation of the wordlist depends from the purpose of the corpus.
+
+Example: if the user decides to add another focus corpus then  before the corpus creation process, the provided corpus should be added to the focusCorpus folder. During the corpus creation the processed corpus is lemmatized and the resulted focus corpus wordlist folder will be returned in the focusCorpusWords. After the corpus creation is complete the user can select their preffered focus corpus that will be used in the keyword calculations.
 
 
 ### Keyword search settings
 
 ![MENU_g](https://user-images.githubusercontent.com/55134673/166156057-e9f11b3d-a218-406f-aa59-3f99d114c6f0.jpg)
 
-In the keyword search settings the user can adjust the settings of the resulting data. If the user decideds to use a large focus corpus then it is recommended to increase the minimal focus corpus word frequency. 
+In the keyword search settings the user can adjust the filters of the resulting data.
 
 ### Keyword search
 
