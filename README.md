@@ -29,7 +29,7 @@ The tool is meant to be used only with estonian texts, any other language will b
 The main navigation around the tool is done by inputting the row numbers. 
 Example: if the user would like to select the first option on the menu, the user should type in 1 and press enter.
 
-![MENU](https://user-images.githubusercontent.com/55134673/166155542-7dea63a6-a73a-42fe-88ca-5400d86bfa64.jpg)
+![166156066-4e68b084-d008-4574-96aa-79a48fdd2abb](https://user-images.githubusercontent.com/55134673/166234689-e1be8d25-f6af-4852-9cb6-b054c312a43b.jpg)
 
 ### Corpus settings
 
@@ -50,7 +50,7 @@ In the keyword search settings the user can adjust the filters of the resulting 
 
 ### Keyword search
 
-![MENU_x](https://user-images.githubusercontent.com/55134673/166156590-70061b7a-c97e-4544-aa6e-08da0e8736ed.jpg)
+![166156590-70061b7a-c97e-4544-aa6e-08da0e8736ed](https://user-images.githubusercontent.com/55134673/166234720-0f4b7518-241a-4b87-b04f-c95d817ec3ab.jpg)
 
 The keyword search is the main function of the Estonian Keyword Search tool. 
 
