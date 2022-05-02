@@ -468,10 +468,10 @@ def keynessMath(
             rF_f = relativeFrequencyFocusCorpusWord = a / (a + c)
             rF_r = relativeFrequencyReferenceCorpusWord = b / (b + d)
 
-            e_1 = expectedRelativeFrequency_a = ((a + c) * (a + b)) / (a + c + b + d)
-            e_2 = expectedRelativeFrequency_b = ((b + d) * (a + b)) / (a + c + b + d)
-            e_3 = expectedRelativeFrequency_c = ((a + c) * (c + d)) / (a + c + b + d)
-            e_4 = expectedRelativeFrequency_d = ((b + d) * (c + d)) / (a + c + b + d)
+            e_1 = expectedRelativeFrequency_a = ((a + c) * (a + b)) / (a + b + c + d)
+            e_2 = expectedRelativeFrequency_b = ((b + d) * (a + b)) / (a + b + c + d)
+            e_3 = expectedRelativeFrequency_c = ((a + c) * (c + d)) / (a + b + c + d)
+            e_4 = expectedRelativeFrequency_d = ((b + d) * (c + d)) / (a + b + c + d)
 
             fpmFc = frequencyPerMillionFocusCorpus = (a * 1000000) / (a + c)
             fpmRc = frequencyPerMillionReferenceCorpus = (b * 1000000) / (b + d)
