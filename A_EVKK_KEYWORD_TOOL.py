@@ -729,7 +729,7 @@ def a_3_corpusSettings(settings):
             + splitter
             + info
             + splitter
-            + "\n1. Lisa uus referentskorpus (kaust: /referenceCorpus)\n2. Lisa uus fookuskorpus  (kaust: /focusCorpus)\n3.Tagasi"
+            + "\n1. Lisa uus referentskorpus (kaust: /referenceCorpus)\n2. Lisa uus fookuskorpus  (kaust: /focusCorpus)\n3. Tagasi"
         )
         menu_a_3_input = input()
         if (menu_a_3_input == "1") or (menu_a_3_input == "2"):
