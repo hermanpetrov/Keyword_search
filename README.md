@@ -35,7 +35,7 @@ For example: if the user would like to select the first option on the menu, the 
 
 ### Corpus settings
 
-![Menu_b (2)](https://user-images.githubusercontent.com/55134673/166234912-a418b93e-cec6-4af0-939d-c8f41b6da3b6.jpg)
+![MENU_b](https://user-images.githubusercontent.com/55134673/166319531-e6bf7d74-c824-476a-8672-973a476c2c2c.jpg)
 
 In the corpus settings, the user is provided with the opportunity to manage used focus and reference corpora. 
 
@@ -56,7 +56,7 @@ In the keyword search settings, the user can adjust the filters of the resulting
 
 The keyword search is the main function of the Estonian Keyword Search tool. 
 
-![MENU_Y](https://user-images.githubusercontent.com/55134673/166156605-bcb25ae7-a6c2-4719-8f75-a3066317056f.jpg)
+![MENU_f](https://user-images.githubusercontent.com/55134673/166319495-d07ef614-1e7f-4538-a199-aa17b76e9822.jpg)
 
 Upon initiation, the tool will begin to calculate the keyword scores both with lemmatized and non-lemmatized words. After the calculation is complete, the used focus corpus keyword folder is created in the keynessValue folder. The created folder will be named both after the compared focus and reference corpus. 
 
