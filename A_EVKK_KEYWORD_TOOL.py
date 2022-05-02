@@ -55,11 +55,22 @@ def corpusSentenceFilter(sentence):
         sentence = re.sub(case, change, sentence)
     return sentence
 
+def corpusNameAdjuster(corpus):
+    corpusFilters = [
+        ("õ|ö", "o"),
+        ("ä", "a"),
+        ("ü", "u"),
+    ]
+    for case, change in corpusFilters:
+
+        corpus = re.sub(case, change, corpus)
+    return corpus
 
 def corpusProcessor(corpusFile, corpusType, menuInputType):
     cleanResultsFolder()
     batchCount = 0
     corpusFile = os.path.basename(corpusFile)
+    adjustedCorpusFile = corpusNameAdjuster(corpusFile)
     csvBatchSize = 1000
     print("Rakendus laeb faili: ", corpusFile, "\n")
     with open(corpusType + corpusFile, "r", encoding="utf-8") as corpus:
@@ -73,17 +84,17 @@ def corpusProcessor(corpusFile, corpusType, menuInputType):
             corpusLines.append(line + " \n\n")
             if lineCount % csvBatchSize == 0:
                 batchWriter(
-                    lineCount // csvBatchSize, corpusLines, corpusFile, corpusType
+                    lineCount // csvBatchSize, corpusLines, adjustedCorpusFile, corpusType
                 )
                 batchCount += 1
                 corpusLines = []
         if len(corpusLines) > 0:
             batchCount += 1
             batchWriter(
-                (lineCount // csvBatchSize) + 1, corpusLines, corpusFile, corpusType
+                (lineCount // csvBatchSize) + 1, corpusLines, adjustedCorpusFile, corpusType
             )
     print(splitter)
-    lemmaExtractor(corpusFile, batchCount, corpusType, menuInputType)
+    lemmaExtractor(adjustedCorpusFile, batchCount, corpusType, menuInputType)
     print("\n", corpusFile, " korpus on loodud.\n")
 
 
@@ -94,7 +105,7 @@ def dictionaryOutput(corpusDictionary, outPutFile, typeOfWords, tokenCount, corp
         if typeOfWords == "lemma":
             corpusData = pd.DataFrame(data_list, columns=["LEMMA", "SAGEDUS"])
         if typeOfWords == "vorm":
-            corpusData = pd.DataFrame(data_list, columns=["SÕNAVORM", "SAGEDUS"])
+            corpusData = pd.DataFrame(data_list, columns=["SONAVORM", "SAGEDUS"])
         corpusData = corpusData.sort_values(by="SAGEDUS", ascending=False)
     if typeOfWords == "token":
         corpusData = pd.DataFrame({"KORPUS": [corpusName], "SAGEDUS": [tokenCount]})
@@ -237,7 +248,7 @@ def countAllFolderWords(typeOfCorpus, corpusName):
     totalWordCount(
         typeOfCorpus + "CorpusResults/nonLemmas",
         folders[1] + "nonLemmas(" + folder + ")",
-        "SÕNAVORM",
+        "SONAVORM",
     )
     totalWordCount(
         typeOfCorpus + "CorpusResults/totalTokens",
@@ -263,7 +274,7 @@ def calculationProcessor(wordType):
     addOne = int(settings[2])
     focCorpusMinimumFreq = float(settings[3])
     wordAmount = settings[4]
-    if settings[4] != "kõik":
+    if settings[4] != "koik":
         wordAmount = int(wordAmount)
     charSize = settings[5]
     stopWords = settings[6]
@@ -289,7 +300,7 @@ def calculationProcessor(wordType):
             )
 
         if wordType == "nonLemma":
-            columnType = "SÕNAVORM"
+            columnType = "SONAVORM"
             referenceCorpus = pd.read_csv(
                 "referenceCorpusWords/"
                 + referenceFolder
@@ -325,7 +336,7 @@ def calculationProcessor(wordType):
         )
 
         keynessFolder = (
-            "võtmesõna_failid(" + str(focusFolder) + " ja " + str(referenceFolder) + ")"
+            "keynessValues(" + str(focusFolder) + " ja " + str(referenceFolder) + ")"
         )
 
         focusCorpus = corpusToLowerCase(
@@ -389,7 +400,7 @@ def stopWordsRemoval(corpusType, comparedCorpus):
     if corpusType == "lemma":
         columnName = "LEMMA"
     else:
-        columnName = "SÕNAVORM"
+        columnName = "SONAVORM"
     stopWords = pd.read_csv(
         "estonianStopWords/estonian-stopwords-" + corpusType + ".csv",
         usecols=[columnName],
@@ -417,8 +428,8 @@ def keynessMath(
     chiKeynessResult = pd.DataFrame(
         columns=[
             wordType,
-            "Võtmesus",
-            "P-väärtus",
+            "Votmesus",
+            "P-vaartus",
             "Fookus suhteline sagedus",
             "Referents suhteline sagedus",
         ]
@@ -426,8 +437,8 @@ def keynessMath(
     logKeynessResult = pd.DataFrame(
         columns=[
             wordType,
-            "Võtmesus",
-            "P-väärtus",
+            "Votmesus",
+            "P-vaartus",
             "Fookus suhteline sagedus",
             "Referents suhteline sagedus",
         ]
@@ -435,7 +446,7 @@ def keynessMath(
     simpleMathResult = pd.DataFrame(
         columns=[
             wordType,
-            "Võtmesus",
+            "Votmesus",
             "Fookus suhteline sagedus mil.",
             "Referents suhteline sagedus mil.",
         ]
@@ -443,7 +454,7 @@ def keynessMath(
     logRatioResult = pd.DataFrame(
         columns=[
             wordType,
-            "Võtmesus",
+            "Votmesus",
             "Fookus suhteline sagedus",
             "Referents suhteline sagedus",
         ]
@@ -501,8 +512,8 @@ def keynessMath(
             logKeynessResult = logKeynessResult.append(
                 {
                     wordType: word,
-                    "Võtmesus": key_LL,
-                    "P-väärtus": p_LL,
+                    "Votmesus": key_LL,
+                    "P-vaartus": p_LL,
                     "Fookus suhteline sagedus": rF_f,
                     "Referents suhteline sagedus": rF_r,
                 },
@@ -512,8 +523,8 @@ def keynessMath(
             chiKeynessResult = chiKeynessResult.append(
                 {
                     wordType: word,
-                    "Võtmesus": key_CHI,
-                    "P-väärtus": p_CHI,
+                    "Votmesus": key_CHI,
+                    "P-vaartus": p_CHI,
                     "Fookus suhteline sagedus": rF_f,
                     "Referents suhteline sagedus": rF_r,
                 },
@@ -523,7 +534,7 @@ def keynessMath(
             simpleMathResult = simpleMathResult.append(
                 {
                     wordType: word,
-                    "Võtmesus": key_SM,
+                    "Votmesus": key_SM,
                     "Fookus suhteline sagedus mil.": fpmFc,
                     "Referents suhteline sagedus mil.": fpmRc,
                 },
@@ -533,7 +544,7 @@ def keynessMath(
             logRatioResult = logRatioResult.append(
                 {
                     wordType: word,
-                    "Võtmesus": key_LR,
+                    "Votmesus": key_LR,
                     "Fookus suhteline sagedus": rF_f,
                     "Referents suhteline sagedus": rF_r,
                 },
@@ -541,7 +552,7 @@ def keynessMath(
             )
 
     keynessValue(
-        "Log-tõepära",
+        "Log-toepara",
         logKeynessResult,
         dataSetName,
         wordAmount,
@@ -573,8 +584,8 @@ def keynessMath(
 def keynessValue(
     equationType, dataFrame, dataSetName, wordAmount, outputFolder
 ):
-    dataFrame = dataFrame.sort_values(by=["Võtmesus"], ascending=False)
-    if wordAmount != "kõik":
+    dataFrame = dataFrame.sort_values(by=["Votmesus"], ascending=False)
+    if wordAmount != "koik":
         dataFrame = dataFrame.head(wordAmount)
     keynessFolder = "keynessValues/" + outputFolder
     if os.path.exists(keynessFolder) == False:
@@ -739,6 +750,15 @@ def menu_keywordSettings():
     resetLog()
     settings = loadSettings()
     menu_b_input = "0"
+    maxShownWords = settings[4]
+    smallLettering = settings[5]
+    stopWordsRemoval = settings[6]
+    if maxShownWords == "koik":
+        maxShownWords = "kõik"
+    if smallLettering == "valjas":
+        smallLettering = "väljas"
+    if stopWordsRemoval == "valjas":
+        stopWordsRemoval = "väljas"
     while menu_b_input != "6":
         print(
             "VÕTMESÕNADE OTSINGU SEADED"
@@ -750,11 +770,11 @@ def menu_keywordSettings():
             + "\n2. Sõna minimaalne esinemissagedus fookuskorpuses = "
             + settings[3]
             + "\n3. Maksimaalne näidatud sõnade hulk = "
-            + settings[4]
+            + maxShownWords
             + "\n4. Väiketähestamine = "
-            + settings[5]
+            + smallLettering
             + "\n5. Stoppsõnade eemaldamine = "
-            + settings[6]
+            + stopWordsRemoval
             + "\n6. Tagasi"
         )
         menu_b_input = input()
@@ -836,7 +856,7 @@ def b_3_keywordSettings(settings):
     resetLog()
     menu_b_3_input = 0
     maxWordRows = settings[4]
-    maxWordsDisplayedOption = [50, 100, 200, "kõik"]
+    maxWordsDisplayedOption = [50, 100, 200, "koik"]
     while menu_b_3_input != "5":
         print(
             "MAKSIMAALNE NÄIDATUD SÕNADE HULK"
@@ -864,7 +884,7 @@ def b_4_keywordSettings(settings):
     resetLog()
     menu_b_4_input = 0
     capitalLetter = settings[5]
-    capitalLetterOption = ["sees", "väljas"]
+    capitalLetterOption = ["sees", "valjas"]
     while menu_b_4_input != "3":
         print(
             "VÄIKETÄHESTAMINE"
@@ -892,7 +912,7 @@ def b_5_keywordSettings(settings):
     resetLog()
     menu_b_5_input = 0
     stopWords = settings[6]
-    stopWordsOption = ["sees", "väljas"]
+    stopWordsOption = ["sees", "valjas"]
     while menu_b_5_input != "3":
         print(
             "STOPPSÕNADE EEMALDAMINE"
