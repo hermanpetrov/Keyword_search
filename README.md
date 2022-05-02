@@ -22,6 +22,8 @@ To use the tool it is necessary to  run the script in Python 3.8 and install the
   * Scipy (https://scipy.org) for computation.
   * Stanza (https://stanfordnlp.github.io/stanza/) for lemmatization.
 
+The tool is meant to be used only with estonian texts, any other language will be presented with inaccurate data.
+
 ## Quick guide
 
 The main navigation around the tool is done by inputting the row numbers. 
@@ -56,6 +58,6 @@ The keyword search is the main function of the Estonian Keyword Search tool.
 
 Upon initation the tool will begin to calcualte the keyword scores both with lemmatized and non lemmatized words. After the calculation is complete the used focus corpus keyword folder is created in the keynessValue folder. The created folder will be named both after the compared focus and reference corpus. 
 
-![Folder](https://user-images.githubusercontent.com/55134673/166156645-bf485d1f-ed7c-4869-83dc-c0a3f1625c8d.PNG)
+![Snippet](https://user-images.githubusercontent.com/55134673/166233676-09341d64-c44f-428e-a4a7-7a3aef657fd9.PNG)
 
 Inside the resulted keyness folder the user will be provided with scores calculated from all 4 above mentioned statistical methods for both lemmatized and non lemmatized words. 
