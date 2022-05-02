@@ -94,6 +94,7 @@ def corpusProcessor(corpusFile, corpusType, menuInputType):
                 (lineCount // csvBatchSize) + 1, corpusLines, adjustedCorpusFile, corpusType
             )
     print(splitter)
+    print("Korpus  (", corpusFile, ") lemmatiseeritakse.\n")
     lemmaExtractor(adjustedCorpusFile, batchCount, corpusType, menuInputType)
     print("\n", corpusFile, " korpus on loodud.\n")
 
@@ -134,7 +135,6 @@ def lemmaExtractor(corpusName, batchCount, corpusType, menuInputType):
     lemmaDictionary = dict()
     counter = 1
     tokenCount = 0
-    print("Korpus  (", corpusName, ") lemmatiseeritakse.\n")
     while batchCount >= counter:
         lemmaOutput = outputPath[0] + "/lemmas(" + corpusName + ").csv"
         nonLemmasOutput = outputPath[1] + "/nonLemmas(" + corpusName + ").csv"
@@ -750,16 +750,17 @@ def menu_keywordSettings():
     resetLog()
     settings = loadSettings()
     menu_b_input = "0"
-    maxShownWords = settings[4]
-    smallLettering = settings[5]
-    stopWordsRemoval = settings[6]
-    if maxShownWords == "koik":
-        maxShownWords = "kõik"
-    if smallLettering == "valjas":
-        smallLettering = "väljas"
-    if stopWordsRemoval == "valjas":
-        stopWordsRemoval = "väljas"
+
     while menu_b_input != "6":
+        maxShownWords = settings[4]
+        smallLettering = settings[5]
+        stopWordsRemoval = settings[6]
+        if maxShownWords == "koik":
+            maxShownWords = "kõik"
+        if smallLettering == "valjas":
+            smallLettering = "väljas"
+        if stopWordsRemoval == "valjas":
+            stopWordsRemoval = "väljas"
         print(
             "VÕTMESÕNADE OTSINGU SEADED"
             + splitter
