@@ -3,8 +3,8 @@
 In the analysis folder, I showcase the results of the used methods (Chi-square, Log-likelihood, Log-ratio, Simple maths). 
 The focus point of the analysis was to establish which of the four methods:
 
-*are practical in a keyword search
-*are providing the most original keywords
+* are practical in a keyword search
+* are providing the most original keywords
 
 
 ## Analysis based on the score
