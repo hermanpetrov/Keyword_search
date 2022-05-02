@@ -96,7 +96,7 @@ def corpusProcessor(corpusFile, corpusType, menuInputType):
     print(splitter)
     print("Korpus  (", corpusFile, ") lemmatiseeritakse.\n")
     lemmaExtractor(adjustedCorpusFile, batchCount, corpusType, menuInputType)
-    print("\n", corpusFile, " korpus on loodud.\n")
+    print("\n", corpusFile, " korpus on lisatud.\n")
 
 
 def dictionaryOutput(corpusDictionary, outPutFile, typeOfWords, tokenCount, corpusName):
@@ -642,7 +642,7 @@ def menu_corpusSettings():
             + settings[0]
             + "\n2. Valitud fookuskorpus = "
             + settings[1]
-            + "\n3. Loo uus korpus\n4. Tagasi"
+            + "\n3. Lisa uus korpus\n4. Tagasi"
         )
         menu_a_input = input()
         if menu_a_input == "1":
