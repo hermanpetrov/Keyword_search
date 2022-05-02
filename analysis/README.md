@@ -1,4 +1,4 @@
-### Analysis of keyword methods
+# Analysis of keyword methods
 
 In the analysis folder, I showcase the results of the used methods (Chi-square, Log-likelihood, Log-ratio, Simple maths). 
 The focus point of the analysis was to establish which of the four methods:
