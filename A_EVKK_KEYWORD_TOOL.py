@@ -725,7 +725,7 @@ def a_3_corpusSettings(settings):
     menu_a_3_input = 0
     while menu_a_3_input != "3":
         print(
-            "LOO UUS KORPUS"
+            "LISA UUS KORPUS"
             + splitter
             + info
             + splitter
